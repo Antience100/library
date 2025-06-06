@@ -21,9 +21,9 @@ input[type="number"] {
   --form-label-color: #390099;
   --form-background-color: #dc143c;
   --form-add-button-color: #5cd651;
-  --form-cancel-button-color: #5e4040;
-  --form-border-color: #fff;
-  --form-radio-buttons-bottom-border-color: #000;
+  --form-cancel-button-color: #d47a2f;
+  --form-border-color: #ffffff;
+  --form-radio-buttons-bottom-border-color: #000000;
 }
 * {
   margin: 0;
@@ -37,7 +37,12 @@ body {
   background-color: var(--main-background-color);
 }
 
+.book-display {
+  visibility: visible;
+}
+
 .library-main {
+  visibility: visible;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -117,8 +122,10 @@ label {
 
 .add-btn {
   background-color: var(--form-add-button-color);
+  color: var(--form-text-color);
 }
 
 .cancel-btn {
   background-color: var(--form-cancel-button-color);
+  color: var(--form-text-color);
 }
