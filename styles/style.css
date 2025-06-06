@@ -80,7 +80,7 @@ button:active {
 }
 
 form {
-  visibility: visible;
+  visibility: hidden;
   background-color: var(--form-background-color);
   border: 2px solid var(--form-border-color);
   border-radius: 10px;
