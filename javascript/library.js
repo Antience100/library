@@ -1,4 +1,5 @@
 const bookBtn = document.getElementById("add-book-btn");
+const clearBtn = document.getElementById("clear-books-btn");
 const form = document.getElementById("form");
 const libraryMain = document.querySelector(".library-main");
 const formCancelBtn = document.getElementById("cancel-btn");
@@ -27,6 +28,13 @@ formCancelBtn.addEventListener("click", function () {
 
 formAddBtn.addEventListener("click", function () {
   console.log("Book title: " + bookTitle.value);
+});
+
+clearBtn.addEventListener("click", function () {
+  const booksToBeCleared = document.querySelectorAll(".book-item");
+  booksToBeCleared.forEach((bookToBeCleared) => {
+    bookToBeCleared.remove();
+  });
 });
 
 function Book(author, title, pages, read) {
