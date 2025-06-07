@@ -11,7 +11,10 @@
     <div class="libray">
       <div class="library-main">
         <h1 class="title">Book Library</h1>
-        <button class="book-btn" id="book-btn">Add</button>
+        <div class="library-main-buttons">
+          <button class="book-btn" id="add-book-btn">Add</button>
+          <button class="clear-btn" id="clear-books-btn">Clear Library</button>
+        </div>
       </div>
       <div class="form-popup" id="bookForm">
         <form action="#" class="form-container" id="form">
@@ -48,7 +51,12 @@
             </div>
             <div class="not-read-radio">
               <label for="not-read">Not Read</label>
-              <input type="radio" name="not-readread" id="not-read" value="not-read" />
+              <input
+                type="radio"
+                name="not-readread"
+                id="not-read"
+                value="not-read"
+              />
             </div>
           </div>
           <div class="form-btns">

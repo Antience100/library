@@ -21,7 +21,8 @@ input[type="number"] {
   --form-label-color: #390099;
   --form-background-color: #dc143c;
   --form-add-button-color: #5cd651;
-  --form-cancel-button-color: #d47a2f;
+  --form-cancel-button-color: #dd8d75;
+  --form-clear-button-color: #d47a2f;
   --form-border-color: #ffffff;
   --form-radio-buttons-bottom-border-color: #000000;
 }
@@ -66,12 +67,27 @@ body {
   color: var(--main-button-text-color);
 }
 
+.clear-btn {
+  width: 100px;
+  height: 25px;
+  border-radius: 50px;
+  border-style: none;
+  background-color: var(--main-button-color);
+  color: var(--main-button-text-color);
+}
+
 button:hover {
   opacity: 80%;
 }
 
 button:active {
   opacity: 70%;
+}
+
+.library-main-buttons {
+  display: flex;
+  gap: 70px;
+  margin-top: 10px;
 }
 
 .form-popup {
@@ -128,4 +144,16 @@ label {
 .cancel-btn {
   background-color: var(--form-cancel-button-color);
   color: var(--form-text-color);
+}
+
+.book-display {
+  z-index: -1;
+  width: 100%;
+  position: absolute;
+  top: 35%;
+  left: 5%;
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+  flex-wrap: wrap;
 }
