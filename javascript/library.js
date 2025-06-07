@@ -50,16 +50,32 @@ function Book(author, title, pages, read) {
   this.read = read;
 }
 
-function addBookToLibrary(author, title, pages, read) {
-  // take params, create a book then store it in the array
-  const bookElement = document.createElement("div");
-  bookElement.classList.add("book-item");
-  bookElement.style.color = "red";
-  bookElement.style.backgroundColor = "#390099";
-  bookElement.style.boxShadow = "0 0 25px #dc143c";
-  bookElement.style.width = "320px";
-  bookElement.style.height = "200px";
-  bookElement.style.borderRadius = "50px";
-  bookElement.style.border = "2px solid #dc143c";
-  bookDisplay.appendChild(bookElement);
+function addBookToLibrary() {
+  event.preventDefault();
+
+  // Creating the style of the div that holds the information of one book and then appending the book to the book display
+  const bookBackground = document.createElement("div");
+  bookBackground.classList.add("book-item");
+  bookBackground.style.color = "red";
+  bookBackground.style.backgroundColor = "#390099";
+  bookBackground.style.boxShadow = "0 0 20px #dc143c";
+  bookBackground.style.width = "320px";
+  bookBackground.style.height = "200px";
+  bookBackground.style.borderRadius = "50px";
+  bookBackground.style.border = "2px solid #dc143c";
+  bookDisplay.appendChild(bookBackground);
+
+  const book = new Book(
+    bookAuthor.value,
+    bookTitle.value,
+    bookPages.value,
+    bookRead.value
+  );
+  myLibrary.push(book);
+  console.log(myLibrary);
+
+  form.style.visibility = "hidden";
+  libraryMain.style.visibility = "visible";
+  bookDisplay.style.visibility = "visible";
+  document.getElementById("form").reset();
 }

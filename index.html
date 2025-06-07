@@ -17,7 +17,7 @@
         </div>
       </div>
       <div class="form-popup" id="bookForm">
-        <form action="#" class="form-container" id="form">
+        <form onsubmit="addBookToLibrary()" class="form-container" id="form">
           <h1 id="form-title">Book Info</h1>
 
           <label for="title">Title</label>
@@ -53,7 +53,7 @@
               <label for="not-read">Not Read</label>
               <input
                 type="radio"
-                name="not-readread"
+                name="not-read"
                 id="not-read"
                 value="not-read"
               />
