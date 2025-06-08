@@ -90,34 +90,60 @@ function createBookDisplay(author, title, pages, read, id) {
   bookBackground.style.backgroundColor = "#390099";
   bookBackground.style.boxShadow = "0 0 20px #dc143c";
   bookBackground.style.width = "320px";
-  bookBackground.style.height = "200px";
+  bookBackground.style.height = "100%";
   bookBackground.style.borderRadius = "10px";
   bookBackground.style.border = "2px solid #dc143c";
   bookBackground.style.padding = "10px";
-
+  bookBackground.style.display = "flex";
+  bookBackground.style.flexDirection = "column";
+  bookBackground.style.justifyContent = "space-between";
+  bookBackground.style.alignItems = "flex-start";
+  bookBackground.style.gap = "6px";
   bookDisplay.appendChild(bookBackground);
-  const bookDisplayBackground = document.getElementById("book-background");
-  bookDisplayBackground.style.display = "flex";
-  bookDisplayBackground.style.flex;
+
+  bookBackground.addEventListener("click", function () {
+    console.log("Clicked a book");
+  });
 
   const displayAuthor = document.createElement("div");
   displayAuthor.classList.add("book-display-info");
+  displayAuthor.textContent = "Author: " + author;
   const displayTitle = document.createElement("div");
   displayTitle.classList.add("book-display-info");
+  displayTitle.textContent = "Title: " + title;
   const displayPages = document.createElement("div");
   displayPages.classList.add("book-display-info");
+  displayPages.textContent = "Pages: " + pages;
   const displayRead = document.createElement("div");
   displayRead.classList.add("book-display-info");
+  if (bookRead === true) {
+    displayRead.textContent = "Read";
+  } else {
+    displayRead.textContent = "Not read";
+  }
+  // const displayRemoveBtn = document.createElement("button");
 
-  bookDisplayBackground.appendChild(displayAuthor);
+  // displayRemoveBtn.addEventListener("click", function () {
+  //   console.log("Remove book");
+  // });
 
-  // const displayAuthorInfo = document.createTextNode(author);
-  // const displayTitleInfo = document.createTextNode(title);
-  // const displayPagesInfo = document.createTextNode(pages);
+  // displayRemoveBtn.classList.add("book-remove-btn");
+  // displayRemoveBtn.textContent = "Remove";
+  // displayRemoveBtn.style.marginLeft = "200px";
 
-  // bookDisplayBackground.appendChild();
-  // bookDisplayBackground.appendChild();
-  // bookDisplayBackground.appendChild();
+  bookBackground.append(displayAuthor);
+  bookBackground.append(displayTitle);
+  bookBackground.append(displayPages);
+  bookBackground.append(displayRead);
+  // displayRead.append(displayRemoveBtn);
 
   console.log(author, title, pages, read, id);
 }
+
+createBookDisplay(
+  "J.K. Rowling",
+  "Harry Potter and the Goblet of Fire",
+  981,
+  true,
+  crypto.randomUUID()
+);
