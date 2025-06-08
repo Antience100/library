@@ -35,6 +35,7 @@ clearBtn.addEventListener("click", function () {
   booksToBeCleared.forEach((bookToBeCleared) => {
     bookToBeCleared.remove();
   });
+  myLibrary.length = 0;
 });
 
 function Book(author, title, pages, read) {
@@ -48,6 +49,13 @@ function Book(author, title, pages, read) {
   this.title = title;
   this.pages = pages;
   this.read = read;
+
+  function bookInfo() {
+    console.log("Author: " + this.author);
+    console.log("Title: " + this.title);
+    console.log("Pages: " + this.pages);
+    console.log("Read: " + this.read);
+  }
 }
 
 function addBookToLibrary() {
@@ -71,7 +79,7 @@ function addBookToLibrary() {
     bookPages.value,
     bookRead.value
   );
-  myLibrary.push(book);
+  myLibrary.push(book.id);
   console.log(myLibrary);
 
   form.style.visibility = "hidden";
