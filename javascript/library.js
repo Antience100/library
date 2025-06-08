@@ -9,8 +9,8 @@ const bookDisplay = document.querySelector(".book-display");
 const bookTitle = document.getElementById("title");
 const bookAuthor = document.getElementById("author");
 const bookPages = document.getElementById("pages");
-const bookRead = document.getElementById("read");
-const bookNotRead = document.getElementById("not-read");
+
+let bookRead = false;
 
 const myLibrary = [];
 
@@ -26,9 +26,7 @@ formCancelBtn.addEventListener("click", function () {
   bookDisplay.style.visibility = "visible";
 });
 
-formAddBtn.addEventListener("click", function () {
-  console.log("Book title: " + bookTitle.value);
-});
+formAddBtn.addEventListener("click", function () {});
 
 clearBtn.addEventListener("click", function () {
   const booksToBeCleared = document.querySelectorAll(".book-item");
@@ -61,6 +59,8 @@ function Book(author, title, pages, read) {
 function addBookToLibrary() {
   event.preventDefault();
 
+  checkRadioBtn();
+
   // Creating the style of the div that holds the information of one book and then appending the book to the book display
   const bookBackground = document.createElement("div");
   bookBackground.classList.add("book-item");
@@ -77,13 +77,23 @@ function addBookToLibrary() {
     bookAuthor.value,
     bookTitle.value,
     bookPages.value,
-    bookRead.value
+    bookRead
   );
-  myLibrary.push(book.id);
+
+  myLibrary.push(book);
   console.log(myLibrary);
 
   form.style.visibility = "hidden";
   libraryMain.style.visibility = "visible";
   bookDisplay.style.visibility = "visible";
+
   document.getElementById("form").reset();
+}
+
+function checkRadioBtn() {
+  if (document.getElementById("read").checked) {
+    bookRead = true;
+  } else {
+    bookRead = false;
+  }
 }
